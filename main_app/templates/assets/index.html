@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Portfolio</h1>
+
+{% for crypto in cryptos %}
+  <div class="card">
+    <a href="{% url 'detail' crypto.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ crypto.name }}</span>
+      <span class="card-title">{{ crypto.acronym }}</span>
+      <p>Network: {{ crypto.network }}</p>
+      {% if crypto.price > 0 %}
+        <p>Price: ${{ crypto.price }}</p>
+      {% else %}
+        <p>No Value</p>
+      {% endif %}
+    </div>
+  </a>
+  </div>
+{% endfor %}
+
+{% endblock %}
