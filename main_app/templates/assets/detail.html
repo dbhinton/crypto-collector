@@ -9,10 +9,14 @@
           <p>Network: {{ crypto.network}}</p>
           <p>Description: {{ crypto.description }}</p>
           {% if crypto.price > 0 %}
-            <p>Age: {{ crypto.price }}</p>
+            <p>Price: ${{ crypto.price }}</p>
           {% else %}
             <p>Worthless</p>
           {% endif %}
+        </div>
+        <div class="card-action">
+          <a href= "{% url 'crypto_update' crypto.id %}">Edit</a>
+          <a href="{% url 'crypto_delete' crypto.id %}">Delete</a>
         </div>
       </div>
     
