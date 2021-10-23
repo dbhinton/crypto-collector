@@ -9,4 +9,6 @@ urlpatterns = [
     path('assets/create/', views.CryptoCreate.as_view(), name = 'crypto_create'),
     path('crypto/<int:pk>/update', views.CryptoUpdate.as_view(), name = 'crypto_update'),
     path('crypto/<int:pk>/delete', views.CryptoDelete.as_view(), name = 'crypto_delete'),
+    path('crypto/<int:crypto_id>/add_trade/', views.add_trade, name='add_trade'),
+     path('crypto/<int:crypto_id>/assoc_marketplace/<int:marketplace_id>/', views.assoc_marketplace, name='assoc_marketplace'),
 ]
